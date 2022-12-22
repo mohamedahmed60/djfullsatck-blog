@@ -1,7 +1,26 @@
 
-<h3>{{single_post}}</h3>
+<!-- <h3>{{single_post}}</h3>
 <p>{{single_post.content}}</p>
 <img src="{{single_post.image.url}}" alt="">
 <hr>
 <a href="{% url 'edit_post' single_post.id %}">Edit</a>
 <a href="{% url 'delete_post' single_post.id %}">Delete</a>
+
+<br> -->
+<div style="display: initial;
+text-align: center;
+">
+    <img src="{{single_post.image.url}}" alt="" srcset="">
+    <div>
+        <h3>{{single_post}}</h3>
+        <p>{{single_post.content}}</p>
+        <div>
+            <a href="{% url 'edit_post' single_post.id %}" style="margin-right: 13px;">Edit</a>
+            <a href="{% url 'delete_post' single_post.id %}">Delete</a>
+        </div>
+    </div>
+    <hr>
+    <div>
+        
+    </div>
+</div>

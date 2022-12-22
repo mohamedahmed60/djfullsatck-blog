@@ -1,7 +1,11 @@
 
-<h1>blog</h1>
+{% comment %} <h1>blog</h1> {% endcomment %}
 
+<br>
+<div style="text-align:center">
 {% for post in mahmoud %}
-   <h3><a href="{% url 'single_post' post.id %}"> {{post}} - {{post.content}}</a></h3>
+   
+   <h3><a href="{% url 'single_post' post.id %}"><br> {{post}} - {{post.content}}</a></h3><hr>
    
 {% endfor %}
+<div>
