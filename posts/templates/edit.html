@@ -1,8 +1,11 @@
-<h3> Edit Post </h3>
 
-<form method="post">
-{% csrf_token %}
-    
-{{form}}
-<input type="submit" value="Save">
-</form>
+<div >
+    <h3 style="text-align:center"> Edit Post </h3>
+
+    <form method="post" style="display: grid; justify-content:center;">
+    {% csrf_token %}
+        
+    {{form}}
+    <input type="submit" value="Save">
+    </form>
+</div>
