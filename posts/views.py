@@ -19,7 +19,9 @@ def new_post(request):
     if request.method == 'POST':
         form = PostForm(request.POST)
         if form.is_valid():
-            form.save()
+            myform = form.save(commit=False)
+            myform.author=request.user
+            myform.save()
     else:
         form = PostForm()
     return render(request,'new.html',{'form': form})
@@ -42,36 +44,3 @@ def delete_post(request,id):
     post = Post.objects.get(id=id)
     post.delete()
     return redirect('/blog/')
-
-
-# def all_postss(request):
-#     post = Post.objects.all()
-#     return render(request,'posts.html',{'posts':posts})
-
-# def single_postss(request,id):
-#     post = Post.objects.git(id=id)
-#     return render(request,'single_pos.html',{'post':post})
-
-
-# def new_post(request):
-#     if request.method == 'POST':
-#         form = PostForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#     else:
-#         form = PostForm()
-#     return render(object,'new.html',{'form':form})
-
-# def edit_posts(request,id):
-#     if request.method == 'POST':
-#         form = PostForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#     else:
-#         form = PostForm()
-#     return render(object,'edit.html',{'form':form})
-
-# def delete_post(request,id):
-#     post = Post.boject.get(id,id)
-#     post.delete()
-#     return render('/blog/')
