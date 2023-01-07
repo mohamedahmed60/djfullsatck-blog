@@ -6,12 +6,14 @@ from .forms import PostForm
 
 def all_posts(request):
     posts = Post.objects.all()         #''' select * from posts '''
-    return render(request,'posts.html',{'mahmoud':posts})
+    return render(request,'blog/post_list.html',{'object':posts})
+    # return render(request,'posts.html',{'mahmoud':posts})
 
 
 def single_post(request,id):
     post = Post.objects.get(id=id)
-    return render(request,'single.html', {'single_post': post})
+    return render(request,'blog/post_detail.html',{'object':post})
+    # return render(request,'single.html', {'single_post': post})
 
 
 
