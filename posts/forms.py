@@ -6,8 +6,8 @@ from django_summernote.fields import SummernoteTextFormField, SummernoteTextFiel
 class PostForm(forms.Form):
     foo = SummernoteTextFormField()
 
-# class FormForSomeModel(forms.ModelForm):
-#     foo = SummernoteTextField()
+class FormForSomeModel(forms.ModelForm):
+     foo = SummernoteTextField()
 
 # class PostForm(forms.ModelForm):
 #     class Meta:

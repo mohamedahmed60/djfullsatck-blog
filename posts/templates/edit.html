@@ -1,11 +1,11 @@
-
 <div >
     <h3 style="text-align:center"> Edit Post </h3>
 
     <form method="post" style="display: grid; justify-content:center;">
     {% csrf_token %}
-        
-    {{form}}
+    {{form |safe}}
+
     <input type="submit" value="Save">
     </form>
 </div>
+
