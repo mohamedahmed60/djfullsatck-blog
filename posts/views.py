@@ -37,8 +37,8 @@ def edit_post(request,id):
         if form.is_valid():
             form.save()
     else:
-        form = PostForm(instance=post)
-    return render(request,'edit.html',{'form': form})
+        form = PostForm()
+    return render(request,'blog/post_detail.html',{'form': form})
 
 
 

@@ -19,14 +19,18 @@
 				    <figure class="blog-banner">
 				        <a href="https://made4dev.com">
 							<img class="img-fluid" src="{{object.image.url}}" alt="image"></a>
-				        <figcaption class="mt-2 text-center image-caption">Image Credit:
-							<a class="theme-link" href="https://made4dev.com?ref=devblog" target="_blank">made4dev.com (Premium Programming T-shirts)</a></figcaption>
-				    </figure>
+
 				    <p>
 						{{object.content|safe}}
 					</p>
 			    </div>
 
+				<form method="post" style="display: grid; justify-content:center;">
+					{% csrf_token %}
+					{{form |safe}}
+
+					<input type="submit" value="Save">
+				</form>
 
 				<nav class="blog-nav nav nav-justified my-5">
 				  <a class="nav-link-prev nav-item nav-link rounded-left" href="/blog/">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
