@@ -1,8 +1,13 @@
-<h3 style="text-align:center"> Create New Post </h3>
+{% extends 'base.html' %}
+{% block body %}
+<div class="main-wrapper">
+    <h3 style="text-align:center"> Create New Post </h3>
 
-<form method="post" style="display: grid; justify-content:center;">
-{% csrf_token %}
-    
-{{form}}
-<input type="submit" value="New">
-</form>
+    <form method="post" style="display: grid; justify-content:center;">
+    {% csrf_token %}
+
+    {{form}}
+    <input type="submit" value="New">
+    </form>
+</div>
+{% endblock body %}

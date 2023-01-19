@@ -38,7 +38,7 @@ def edit_post(request,id):
             form.save()
     else:
         form = PostForm()
-    return render(request,'blog/post_detail.html',{'form': form})
+    return render(request,'edit.html',{'form': form})
 
 
 
