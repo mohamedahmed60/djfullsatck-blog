@@ -4,8 +4,8 @@
 <br>
 <div style="text-align:center">
 {% for post in mahmoud %}
-   
+
    <h3><a href="{% url 'single_post' post.id %}"><br> {{post}} - {{post.content}}</a></h3><hr>
-   
+
 {% endfor %}
 <div>

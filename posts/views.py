@@ -1,5 +1,5 @@
 from django.shortcuts import render , redirect
-from .models import Post
+from .models import Post , About
 from .forms import PostForm
 # Create your views here.
 
@@ -46,3 +46,8 @@ def delete_post(request,id):
     post = Post.objects.get(id=id)
     post.delete()
     return redirect('/blog/')
+
+
+def about(request):
+    object = About.objects.all()
+    return render(request,'blog/about.html',{'abouts':object})
