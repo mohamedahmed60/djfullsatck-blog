@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator
 from django.shortcuts import render , redirect
 from .models import Post , About
 from .forms import PostForm
@@ -6,7 +7,10 @@ from .forms import PostForm
 
 def all_posts(request):
     posts = Post.objects.all()         #''' select * from posts '''
-    return render(request,'blog/post_list.html',{'object':posts})
+    paginator = Paginator(posts, 4)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request,'blog/post_list.html',{'object':page_obj})
     # return render(request,'posts.html',{'mahmoud':posts})
 
 

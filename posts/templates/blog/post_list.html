@@ -4,7 +4,7 @@
  	<div class="main-wrapper">
 	    <section class="cta-section theme-bg-light py-5">
 		    <div class="container text-center single-col-max-width">
-			    <h2 class="heading">DevBlog - A Blog Template Made For Developers</h2>
+			    <h2 class="heading">Think About Why You Want to Blog </h2>
 			    <div class="intro">Welcome to my blog. Subscribe and get my latest blog post in your inbox.</div>
 			    <div class="single-form-max-width pt-3 mx-auto">
 				    <form class="signup-form row g-2 g-lg-2 align-items-center">
@@ -46,13 +46,44 @@
 			    </div><!--//item-->
 				{% endfor %}
 
+				<br><br>
 
+				{% if object.has_other_pages %}
+					<nav aria-label="Page navigation example">
+						<ul class="pagination justify-content-center">
+							{% if object.has_previous %}
+
+							<li class="page-item ">
+							<a class="page-link " href="?page={{object.previous_page_number}}"> << </a>
+							</li>
+							{% endif %}
+							{% for i in object.paginator.page_range %}
+							<li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+							{% endfor %}
+							{% if object.has_next %}
+							<li class="page-item">
+							<a class="page-link" href="?page={{object.next_page_number}}">>></a>
+							</li>
+							{% endif %}
+						</ul>
+						</nav>
+					{% endif %}
+
+			<!--
 			    <nav class="blog-nav nav nav-justified my-5">
 				  <a class="nav-link-prev nav-item nav-link d-none rounded-left" href="/blog/">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
 				  <a class="nav-link-next nav-item nav-link rounded" href="/blog/1">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
 				</nav>
-
+			-->
 		    </div>
 	    </section>
+		<footer class="bg-light text-center text-lg-start">
+			<!-- Copyright -->
+			<div class="text-center text-white bg-primary p-3">
+			  © 2022 Copyright:
+			  <a class="text-white" href="https://mohamedaljabri666@gmail.com/">mohamedaljabri666@gmail.com</a>
+			</div>
+			<!-- Copyright -->
+		  </footer>
 	</div>
 {% endblock body %}
